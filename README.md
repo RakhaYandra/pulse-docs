@@ -36,3 +36,9 @@ markdown-only (living docs that change faster than releases).
 | Version | Date | Content |
 |---|---|---|
 | v1.0.0 | 2026-09-26 | Initial release: BRD, PRD, ARCHITECTURE + PDFs |
+
+## Roadmap (docs)
+
+Done: BRD, PRD, ARCHITECTURE, BENCHMARK, ADR-001…008, postmortems, PDF pipeline.
+In progress: FSD, SRS (this release cycle).
+Frozen: translations (Indonesian sibling-style docs — English is canonical here).

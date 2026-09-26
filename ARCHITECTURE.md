@@ -27,3 +27,13 @@ workers (per-job recover in runner).
 
 Repos: [pulse](https://github.com/RakhaYandra/pulse) (this) ·
 [pulse-web](https://github.com/RakhaYandra/pulse-web) (dashboard).
+
+## Scheduling (`next_run_at`)
+
+Due is computed from scheduled time, not completion time: `monitors.next_run_at`
+(indexed), advanced by the scheduler on each successful enqueue
+(`MarkScheduled(now + interval)`). Create sets `next_run_at = now` (check
+ASAP); changing the interval resets it. Result: steady ~60s cadence instead
+of drift with drain time (see BENCHMARK.md).
+Dedup claims (`pulse:queued:<id>`, TTL 3x interval, released on completion)
+bound the queue even when workers lag.
