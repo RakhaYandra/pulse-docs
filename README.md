@@ -2,7 +2,7 @@
 
 [![docs](https://github.com/RakhaYandra/pulse-docs/actions/workflows/docs-to-pdf.yml/badge.svg)](https://github.com/RakhaYandra/pulse-docs/releases)
 
-> Ecosystem: [api](https://github.com/RakhaYandra/pulse) · [web](https://github.com/RakhaYandra/pulse-web) · [docs](https://github.com/RakhaYandra/pulse-docs/releases)
+> Ecosystem: [api](https://github.com/RakhaYandra/pulse) · [web](https://github.com/RakhaYandra/pulse-web) · [docs](https://github.com/RakhaYandra/pulse-docs/releases) · [data](https://github.com/RakhaYandra/pulse-data)
 
 Official documentation for **Pulse**, an API monitoring & incident platform
 (English). This repo is the source of requirements and design; source code
