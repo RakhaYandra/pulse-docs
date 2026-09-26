@@ -13,6 +13,8 @@ lives in the application repos (see Fact sources).
 | [BRD.md](BRD.md) | Business Requirements Document — problem, objective, scope, success criteria ([PDF](https://github.com/RakhaYandra/pulse-docs/releases/latest)) |
 | [PRD.md](PRD.md) | Product Requirements Document — functional + non-functional requirements ([PDF](https://github.com/RakhaYandra/pulse-docs/releases/latest)) |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | System architecture, layers, data flow ([PDF](https://github.com/RakhaYandra/pulse-docs/releases/latest)) |
+| [FSD.md](FSD.md) | Functional Specification — per endpoint/job, FS-xx IDs ([PDF](https://github.com/RakhaYandra/pulse-docs/releases/latest)) |
+| [SRS.md](SRS.md) | Abridged IEEE 830 — FR traceability, measurable NFRs ([PDF](https://github.com/RakhaYandra/pulse-docs/releases/latest)) |
 | [BENCHMARK.md](BENCHMARK.md) | Measured load results, method, honest reads (markdown only) |
 | ADR-001…008 | Architecture Decision Records (markdown only, living docs) |
 | POSTMORTEM-001/002 | Incident postmortems (markdown only) |
@@ -26,8 +28,8 @@ Fact sources (truth per artifact):
 
 ## PDF
 
-Each `v*` tag triggers the `docs-to-pdf` workflow → BRD, PRD, ARCHITECTURE
-PDFs upload as **release assets**. Download the formal versions on the
+Each `v*` tag triggers the `docs-to-pdf` workflow → BRD, PRD, ARCHITECTURE,
+FSD, SRS PDFs upload as **release assets**. Download the formal versions on the
 [Releases](../../releases) page. BENCHMARK, ADRs, and postmortems stay
 markdown-only (living docs that change faster than releases).
 
@@ -35,10 +37,11 @@ markdown-only (living docs that change faster than releases).
 
 | Version | Date | Content |
 |---|---|---|
+| v1.1.0 | 2026-09-26 | Added FSD, SRS + PDFs (5 total) |
 | v1.0.0 | 2026-09-26 | Initial release: BRD, PRD, ARCHITECTURE + PDFs |
 
 ## Roadmap (docs)
 
-Done: BRD, PRD, ARCHITECTURE, BENCHMARK, ADR-001…008, postmortems, PDF pipeline.
-In progress: FSD, SRS (this release cycle).
+Done: BRD, PRD, ARCHITECTURE, BENCHMARK, ADR-001…008, postmortems, PDF pipeline,
+FSD, SRS.
 Frozen: translations (Indonesian sibling-style docs — English is canonical here).
