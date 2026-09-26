@@ -16,7 +16,7 @@ lives in the application repos (see Fact sources).
 | [FSD.md](FSD.md) | Functional Specification — per endpoint/job, FS-xx IDs ([PDF](https://github.com/RakhaYandra/pulse-docs/releases/latest)) |
 | [SRS.md](SRS.md) | Abridged IEEE 830 — FR traceability, measurable NFRs ([PDF](https://github.com/RakhaYandra/pulse-docs/releases/latest)) |
 | [BENCHMARK.md](BENCHMARK.md) | Measured load results, method, honest reads (markdown only) |
-| ADR-001…008 | Architecture Decision Records (markdown only, living docs) |
+| ADR-001…009 + ADR-001-fe-ca | Architecture Decision Records (markdown only, living docs) |
 | POSTMORTEM-001/002 | Incident postmortems (markdown only) |
 
 Fact sources (truth per artifact):
