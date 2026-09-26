@@ -25,11 +25,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build PDFs
+        # xelatex (not pdflatex): docs contain Unicode (≥, →, ─, ▼) that
+        # pdflatex cannot typeset. Verified locally with pandoc/latex:3.1.
         run: |
           mkdir -p pdf
           for f in BRD PRD ARCHITECTURE; do
             docker run --rm -v "$PWD:/data" -w /data pandoc/latex:3.1 \
-              "$f.md" -o "pdf/Pulse-$f.pdf" --pdf-engine=pdflatex \
+              "$f.md" -o "pdf/Pulse-$f.pdf" --pdf-engine=xelatex \
               -V geometry:margin=2.5cm --toc \
               --metadata title="Pulse $f"
           done
