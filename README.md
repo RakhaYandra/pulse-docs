@@ -42,6 +42,6 @@ markdown-only (living docs that change faster than releases).
 
 ## Roadmap (docs)
 
-Done: BRD, PRD, ARCHITECTURE, BENCHMARK, ADR-001…008, postmortems, PDF pipeline,
-FSD, SRS.
+Done: BRD, PRD, ARCHITECTURE, BENCHMARK, ADR-001…009 + ADR-001-fe-ca,
+postmortems, PDF pipeline, FSD, SRS.
 Frozen: translations (Indonesian sibling-style docs — English is canonical here).
