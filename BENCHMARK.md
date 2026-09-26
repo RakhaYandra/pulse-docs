@@ -19,16 +19,16 @@ every tick (no dedup). Correctness held (0 false positives, 5/5 timeouts opened)
 | N | W | checks/s | required/s | peak burst | qmax | overdue | ok+inc | timeout OPEN |
 |---|---|----------|------------|------------|------|---------|--------|--------------|
 | 100 | 2 | 1.29 | 1.67 | 3.4/s | 0 | 0/100 | 0 | 5/5 |
-| 500 | 2 | 7.48 | 8.33 | ~8/s | 0 | 0/500 | 0 | 25/25 |
+| 500 | 2 | 7.12 | 8.33 | ~8/s | 0 | 0/500 | 0 | 25/25 |
 | 1000 | 4 | 9.28 | 16.67 | 28/s | 0 | 0/1000 | 0 | 50/50 |
 
 Reads:
 - Peak drain always exceeds required rate (28/s > 16.7/s @N=1000). Capacity OK.
-- After `next_run_at` (re-ran N=500): wave spacing settled to ~60s steady-state
-  after cold start (was 60-90s drift). Remaining stretch comes from synchronized
-  seeding + timeout-tail drain, visible in wave gaps, bounded by dedup.
+- After stagger (ADR-009, re-ran N=500): checks flow continuously, burst
+  windows every sampling tick, no 60-90s gaps. Synchronized seeding no longer
+  forms waves.
 - Queue bounded at 0 in all post-hardening runs (dedup works; 314 skips seen mid-run).
 - Zero overdue (120s threshold), zero false incidents, 100% timeout detection.
 
 Honest summary: engine sustains 1000 monitors on 4 workers with correct
-incident behavior; residual stretch under synchronized load is measured above.
+incident behavior; cadence holds steady-state with deterministic phase spread (ADR-009).
