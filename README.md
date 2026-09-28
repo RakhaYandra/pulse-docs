@@ -18,6 +18,10 @@ lives in the application repos (see Fact sources).
 | [BENCHMARK.md](BENCHMARK.md) | Measured load results, method, honest reads (markdown only) |
 | ADR-001…009 + ADR-001-fe-ca | Architecture Decision Records (markdown only, living docs) |
 | POSTMORTEM-001/002 | Incident postmortems (markdown only) |
+| [ROADMAP.md](ROADMAP.md) | Development roadmap — goals, phases, risks, milestones (markdown only, living) |
+| [TSD.md](TSD.md) | Technical Specification — full A–Q standalone (markdown only, living) |
+| [PROGRESS.md](PROGRESS.md) | Progress & status reports, per-release cadence (markdown only, living) |
+| [USER-GUIDE.md](USER-GUIDE.md) | End-user + local-admin guide, FAQ, troubleshooting (markdown only, living) |
 
 Fact sources (truth per artifact):
 
