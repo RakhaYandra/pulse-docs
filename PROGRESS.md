@@ -1,44 +1,49 @@
 # Pulse — Progress Report
 
-Period: inception → 2026-09-28 · Report date: 2026-09-28
+Period: inception → 2026-09-29 · Report date: 2026-09-29
 Prepared by: Rakha Putra Pebri Yandra · Status: **On Track (Green)**
 
 ## Executive Summary
 
 Overall: MVP + hardening + observability + analytics + full CA + live
-Telegram verification — complete. Accomplishments this period: 4 GitHub
-issues triaged (2 closed with evidence: #1 stagger, #3 Telegram; 2 kept:
-#2 by-design, #4 frozen), 4 doc templates adopted (ROADMAP/TSD/PROGRESS/
-USER-GUIDE). Blockers: none active (deploy frozen by owner decision, not
-by technical obstacle). Next: USER-GUIDE (in progress), deploy decision.
+Telegram verification + FE overhaul (audit → Sesi A/B + visual + light mode
++ routing + pagination) + oxlint/oxfmt tooling — complete. Accomplishments
+this period: react-router deep links (`/monitors/:id`, tab + page params,
+nginx SPA fallback), pager on both lists (20/page, URL-synced), icon theme
+toggle, oxlint+oxfmt side-by-side with measured speedups (17x/175x on this
+repo). Blockers: none active (deploy frozen by owner decision, not by
+technical obstacle). Next: deploy decision.
 
 ## Progress Overview
 
 Delivered: 15-route API, scheduler/worker engine, React dashboard +
 Reports, Prometheus/Grafana, DuckDB analytics (4 marts, MATCH), full CA
-both sides, Newman 22/22, e2e 7/7, bench N=1000 valid, 2 postmortems closed.
+both sides, Newman 22/22, e2e 9/9, bench N=1000 valid, 2 postmortems closed.
 Quality: 0 known defects; contract + e2e green; secret-scan clean per push.
-In progress: user documentation (this batch). Upcoming: deploy-or-document-
-no decision; per-replica rate limit only if scale-out is ever needed.
+Upcoming: deploy-or-document-no decision; per-replica rate limit only if
+scale-out is ever needed.
 
 ## Metrics & KPIs
 
 Velocity: phase-gated solo (no story points — stated, not faked). Bugs:
-2 found via postmortems (JWT workers, bench+SSRF), 2 resolved, 0 outstanding.
-Coverage: contract 22/22, e2e 7/7, FE unit 24, Go unit incl. ratelimit.
-Perf: peak 28/s, queue 0, 50/50 timeout validity. Uptime: local-dev only
-(no prod claim).
+2 found via postmortems (JWT workers, bench+SSRF), 2 resolved, 0 outstanding;
+plus 12 design-audit findings, all fixed or explicitly deferred (routing done,
+pagination done). Coverage: contract 22/22, e2e 9/9, FE unit 27, Go unit
+incl. ratelimit. Tooling: oxlint 0.054s vs ESLint 0.925s; oxfmt 0.003s vs
+Prettier 0.527s; zero format diff. Perf: peak 28/s, queue 0, 50/50 timeout
+validity. Uptime: local-dev only (no prod claim).
 
 ## Status by Component
 
 | Component | % | Status | Notes |
 |---|---|---|---|
 | API + engine | 100 | Completed | stagger, dedup, pool shipped |
-| Web UI | 100 | Completed | WattVision, a11y pass 16/16 |
+| Web UI | 100 | Completed | WattVision sharpened, light mode, routing, pagination, DESIGN.md |
+| Tooling | 100 | Completed | oxlint+oxfmt side-by-side, measured, documented |
 | Observability | 100 | Completed | 6/6 targets, 5 panels, 2 alerts |
 | Analytics | 100 | Completed | CI green, cross-check MATCH |
 | Docs formal | 100 | Completed | v1.1.0 + PDFs |
-| Docs living | 80 | In progress | ROADMAP/TSD/PROGRESS done, guide next |
+| Docs living | 100 | Completed | ROADMAP/TSD/PROGRESS/USER-GUIDE current |
 | Deploy | 0 | Blocked (frozen) | owner decision pending |
 
 ## Issues & Blockers
@@ -61,18 +66,19 @@ keeping bench guards on every engine change.
 
 ## Scope Changes
 
-Added this period: 4-doc documentation expansion (ROADMAP/TSD/PROGRESS/
-USER-GUIDE) — approved by owner, zero timeline impact (docs follow code).
-No creep into product scope.
+Added this period: FE overhaul (design audit → Sesi A/B fixes → visual
+upgrade with light mode → react-router → pagination) and oxlint/oxfmt
+side-by-side tooling — owner-approved, zero product-scope creep (same
+features, better surface + faster gates).
 
 ## Next Period Forecast
 
-USER-GUIDE completion, docs push, then deploy decision. Known challenge:
+Deploy decision (go with VPS runbook, or documented no). Known challenge:
 none technical. Focus: close the books cleanly.
 
 ## Action Items
 
-- [ ] Finish USER-GUIDE + push pulse-docs (owner: me, due: this session)
+- [x] Finish USER-GUIDE + push pulse-docs (done 2026-09-28)
 - [ ] Decide deploy: go (VPS runbook) or documented no (owner, no deadline)
 
 ---

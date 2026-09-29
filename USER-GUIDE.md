@@ -1,6 +1,6 @@
 # Pulse — User Guide
 
-Docs version: v1.0 · Updated: 2026-09-28 · Audience: developers (end user +
+Docs version: v1.1 · Updated: 2026-09-29 · Audience: developers (end user +
 local admin). Product version: local compose stack (no release tags on code).
 
 ## Product Overview
@@ -27,7 +27,10 @@ depth` panel in Grafana).
 ## User Guide
 
 Dashboard: summary cards (totals, up/down, active, 24h uptime), monitor
-table with status + sparkline, click a row for detail. Monitor detail:
+table with status + sparkline, click a row for detail. Every monitor has a
+shareable URL (`/monitors/:id`); tabs and list pages live in the URL too
+(`?tab=incidents`, `?page=2`), so back/refresh/deep-link all work. Long
+lists paginate at 20 per page. Monitor detail:
 recent checks chart, incident list, per-monitor `monitor_id` links.
 Incidents: OPEN on threshold breach, RESOLVED on recovery — both pushed to
 Telegram if configured. Reports tab: reliability bars over N days
@@ -73,13 +76,18 @@ your data stays in your Postgres.
 ## FAQ
 
 Q: Single node only? A: Yes, by design — no HA claims.
-Q: How fresh is the dashboard? A: Scheduler ticks every 10s; per-monitor
-pace = its interval + stagger slot.
+Q: How fresh is the dashboard? A: Auto-refresh every 15s with a visible
+"Checking…" indicator and ticking age; if an update fails you get a stale
+banner naming the last good data, never a silent freeze.
+Q: Dark or light? A: Both, via the sun/moon button in the top bar;
+your choice persists across reloads.
 Q: Data retention? A: Checks pruned per policy; incidents kept.
 Q: Can I monitor internal hosts? A: Yes via `PULSE_ALLOW_HOSTS`.
 
 ## Changelog
 
+- 2026-09-29: deep-link URLs + pagination, light/dark toggle, stale honesty
+  banners, login validation, oxlint/oxfmt tooling (measured 17x/175x).
 - 2026-09-28: Telegram verified live; WattVision theme; ROADMAP/TSD/
   PROGRESS/USER-GUIDE added.
 - 2026-09-26: docs v1.1.0 (FSD/SRS + PDFs); v1.0.0 (BRD/PRD/ARCH + PDFs).
